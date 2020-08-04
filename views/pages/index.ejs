@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./styles/style.css" rel="stylesheet" />
+    <title>Best Books!</title>
+    <link rel="stylesheet" href="../../public/styles/style.css">
   </head>
 </head>
-<body>
-    <h1>Hello, world!</h1>
-</body>
+  <body>
+    <main>
+     <section class="search-container">
+         <div class="section1">
+            <form action="/search" method="POST">
+                <fieldset>
+                <legend>Search by Title or Author</legend>
+                <label>
+                    <span>Enter a title or author:</span>
+                    <textarea name="search term" cols="30" rows="10"></textarea>
+                </label>
+        </div>
+        <div class="section2">
+        <label>Title
+          <input type="radio" name="title" value="text">
+        </label>
+        </div>
+        <div class="section3">
+        <label>Author
+          <input type="radio" name="author" value="text">
+        </label>
+        </div>
+        <div class="section4">
+        <button>Search the Google Books API</button>
+        </div>
+    </fieldset>
+    </form>
+     </section>
+    </main>
+  </body>
 </html>
