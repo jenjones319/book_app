@@ -1,4 +1,4 @@
-@import "reset.css"
-@import "layout.css"
-@import "base.css"
-@
+
+body {
+    background-color: coral;
+}
