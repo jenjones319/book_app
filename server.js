@@ -8,18 +8,19 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT;
 
-// Route Definitions
-app.use('*', notFoundHandler);
-app.use(errorHandler);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('./public'));
 
-// Route Handlers
-function notFoundHandler(request, response) {
-  response.status(404).json({ notFound: true });
-}
+app.post('/contact', (request, response) => {
+  console.log(request.body);
+  response.sendFile('./thanks.html', { root: './public' });
+});
 
-function errorHandler(error, request, response, next) {
-  response.status(500).json({ error: true, message: error.message });
-}
+app.get('/contact', (request, response) => {
+  console.log(request.query);
+  response.sendFile('./thanks.html', { root: './public' });
+});
 
-// App listener
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.get('*', (request, response) => response.status(404).send('This route does not exist'));
+
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));
