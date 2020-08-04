@@ -22,7 +22,7 @@ app.use(express.static('./public'));
 app.get('/', renderHomePage);
 
 // Renders the search form
-app.get('/searches/new', showForm);
+app.get('/new', showForm);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
