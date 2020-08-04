@@ -1,5 +1,5 @@
 {
-  "name": "day-1",
+  "name": "google-books-api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1"
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "superagent": "^4.0.0-beta.5"
   }
 }
