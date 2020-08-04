@@ -31,12 +31,12 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
-// Only show part of this to get students started
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-
+  this.image_url = info.imageLinks.thumbnail || placeholderImage;
   this.title = info.title || 'No title available';
-
+  this.authors = info.authors || 'No authors available';
+  this.description = info.description || 'No description availble'
 }
 
 // Note that .ejs file extension is not required
