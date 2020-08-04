@@ -1,0 +1,25 @@
+* {
+    color: #32292F;
+}
+
+body{
+    background-color: #F0F7F4;
+}
+
+h2 {
+    background-color: #473c37;
+    font-size: 32px;
+    color:  #F0F7F4;
+    text-align: center;
+
+}
+
+#card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card {
+    background-color: #705d564b;
+    margin-top: 60px;
+}
