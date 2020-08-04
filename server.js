@@ -64,7 +64,7 @@ function createSearch(request, response) {
   console.log(request.body.search);
 
   if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}`; }
-  if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
+  if (request.body.search[1] === 'authors') { url += `+inauthors:${request.body.search[0]}`; }
 
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
