@@ -49,6 +49,10 @@ function showForm(request, response) {
   response.render('pages/new.ejs');
 }
 
+function errorHandler(error, request, response, next) {
+  response.status(500).json({ error: true, message: error.message });
+}
+
 // No API key required
 // Console.log request.body and request.body.search
 function createSearch(request, response) {
@@ -63,5 +67,7 @@ function createSearch(request, response) {
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
     .then(results => response.render('pages/show', { searchResults: results }));
+
   // how will we handle errors?
+//added an error handler function on ln 52
 }
