@@ -41,8 +41,6 @@ function Book(info) {
   this.description = info.description || 'No description availble'
 }
 
-// Note that .ejs file extension is not required
-
 function renderHomePage(request, response) {
   response.render('pages/index');
 }
