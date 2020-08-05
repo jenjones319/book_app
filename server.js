@@ -11,10 +11,8 @@ const PORT = process.env.PORT || 3000;
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
 
-
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
-
 app.use(express.static('./public'));
 
 // API Routes
@@ -41,8 +39,6 @@ function Book(info) {
   this.description = info.description || 'No description availble'
 }
 
-// Note that .ejs file extension is not required
-
 function renderHomePage(request, response) {
   response.render('pages/index');
 }
@@ -55,8 +51,6 @@ function errorHandler(error, request, response, next) {
   response.status(500).json({ error: true, message: error.message });
 }
 
-// No API key required
-// Console.log request.body and request.body.search
 function createSearch(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
 
@@ -69,7 +63,4 @@ function createSearch(request, response) {
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
     .then(results => response.render('pages/show', { searchResults: results }));
-
-  // how will we handle errors?
-//added an error handler function on ln 52
 }
