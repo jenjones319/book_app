@@ -37,7 +37,9 @@ function Book(info) {
   this.image_url = info.imageLinks.thumbnail || placeholderImage;
   this.title = info.title || 'No title available';
   this.authors = info.authors || 'No authors available';
-  this.description = info.description || 'No description availble'
+  this.description = info.description || 'No description availble';
+  this.isbn = info.industryIdentifiers.identifier || 'No ISBN availble';
+  this.bookShelf = info.catagories || 'Bookshelf not found';
 }
 
 function renderHomePage(request, response) {
@@ -59,7 +61,7 @@ function getBook(request, response) {
   clientInformation.query(SQL, values)
     .then(result => {
       let viewModel = {
-        task: result.rows[0],
+        books: result.rows[0],
       };
       response.render('pages/detail', viewModel);
     })
