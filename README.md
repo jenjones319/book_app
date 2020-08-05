@@ -14,3 +14,4 @@ This application uses .json, jQuery, .js, HTML5, CSS, ejs templates, Heroku, Git
 
 ## Change Log
 08-04-2020 11:04pm - Heroku application fully functional
+08-05-2020 1:45pm - Database created in psql
