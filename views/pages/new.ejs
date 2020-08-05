@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/new.css">
     <title>Book Collection</title>
   </head>
   <body>
@@ -9,7 +9,8 @@
       <h1>Books!</h1>
     </header>
     <main>
-      <h4>Search by Title or Author</h4>
+      <section id="search-container">
+      <div id="content1"><h4>Search by Title or Author</h4></div>
       <form action="/searches" method="post">
         <input type="text" name="search" placeholder="Enter a title or author" required>
         <fieldset>
@@ -26,6 +27,7 @@
         </fieldset>
         <button type="submit">Search the Google Books API</button>
       </form>
+      </section>
     </main>
   </body>
 </html>
