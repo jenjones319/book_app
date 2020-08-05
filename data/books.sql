@@ -5,5 +5,5 @@ CREATE TABLE IF NONE EXISTS bookshelf (
     title VARCHAR (500),
     author VARCHAR (500),
     descriptions VARCHAR (500),
-    bookshelf VARCHAR (500),
+    category VARCHAR (500),
 );
