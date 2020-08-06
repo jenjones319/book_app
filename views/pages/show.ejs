@@ -4,23 +4,17 @@
 <head>
   <title>Book Collection</title>
   <link rel="stylesheet" href="./styles/show.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  <header>
+    <h1>Best Books!</h1>
+    <i class="fa fa-bars"></i>
+  </header>
   <main>
     <h2>Search Results</h2>
-    <div id="card-container">
-      <% searchResults.forEach( book => { %>
-      <div class="book-card">
-        <img src="<%= book.image_url %><" alt="<%= book.title %>">
-        <h3><%= book.title %></h3>
-        <span><%= book.authors %></span>
-        <p><%= book.description %></p>
-        <p>ISBN: <%= book.isbn %></p>
-        <p>Bookshelf: <%= book.catagories%> </p>
-        <% }) %>
-      </div>
-    </div>
+    <%- include('../layout/bookinfo') %>
   </main>
 </body>
 

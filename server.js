@@ -36,9 +36,9 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.image_url = info.imageLinks.thumbnail || placeholderImage;
   this.title = info.title || 'No title available';
-  this.authors = info.authors.join(', ') || 'No authors available';
+  this.authors = info.authors ? info.authors.join(', ') : 'No authors available';
   this.description = info.description || 'No description availble';
-  this.isbn = info.industryIdentifiers.map(i => i.identifier).join(', ').toString() || 'No ISBN availble';
+  this.isbn = info.industryIdentifiers ? info.industryIdentifiers.map(i => i.identifier).join(', ').toString() : 'No ISBN availble';
   this.bookShelf = info.categories || 'Bookshelf not found';
 }
 
