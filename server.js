@@ -34,12 +34,12 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 // HELPER FUNCTIONS
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-  this.image_url = info.imageLinks.thumbnail || placeholderImage;
-  this.title = info.title || 'No title available';
+  this.image_url = info.imageLinks ? info.imageLinks.thumbnail : placeholderImage;
+  this.title = info.title ? info.title : 'No title available';
   this.authors = info.authors ? info.authors.join(', ') : 'No authors available';
-  this.description = info.description || 'No description availble';
+  this.description = info.description ? info.description : 'No description availble';
   this.isbn = info.industryIdentifiers ? info.industryIdentifiers.map(i => i.identifier).join(', ').toString() : 'No ISBN availble';
-  this.bookShelf = info.categories || 'Bookshelf not found';
+  this.bookShelf = info.categories ? info.categories :'Bookshelf not found';
 }
 
 function renderHomePage(request, response) {
