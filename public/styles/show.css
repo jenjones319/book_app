@@ -1,3 +1,12 @@
+main {
+    margin: 0 auto;
+    color: #32292F;
+  }
+
+header{
+  margin: 0 auto;
+}
+
 header {
     background-color:  #201b19;
     color:  #F0F7F4;
@@ -13,7 +22,6 @@ h2 {
     font-size: 32px;
     color:  #F0F7F4;
     text-align: center;
-
 }
 
 #card-container {
@@ -25,7 +33,6 @@ h2 {
     background-color: #705d5686;
     margin: 20px;
     border-radius: 5px;
-    
 }
 
 i {

@@ -23,6 +23,8 @@ app.get('/', renderHomePage);
 app.get('/searches/new', showForm);
 app.get('/new', showForm);
 app.get('/books/:id', getBook);
+app.post('/savebook', saveBook)
+
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
@@ -39,7 +41,7 @@ function Book(info) {
   this.authors = info.authors ? info.authors.join(', ') : 'No authors available';
   this.description = info.description ? info.description : 'No description availble';
   this.isbn = info.industryIdentifiers ? info.industryIdentifiers.map(i => i.identifier).join(', ').toString() : 'No ISBN availble';
-  this.bookShelf = info.categories ? info.categories :'Bookshelf not found';
+  this.bookShelf = info.categories ? info.categories : 'Bookshelf not found';
 }
 
 function renderHomePage(request, response) {
@@ -53,19 +55,33 @@ function showForm(request, response) {
 function getBook(request, response) {
   const SQL = `
     SELECT *
-    FROM books 
-    WHERE id = $1
+    FROM bookshelf 
+    WHERE id = $1;
     `;
 
   let values = [request.params.id];
   clientInformation.query(SQL, values)
     .then(result => {
       let viewModel = {
-        books: result.rows[0],
+        bookshelf: result.rows[0]
       };
       response.render('pages/detail', viewModel);
     })
     .catch(error => errorHandler(error, response));
+}
+
+function saveBook(request, response) {
+  let { ibsn, image_url, title, author, descriptions, category } = request.body;
+  const SQL = `
+    INSERT INTO bookshelf (ibsn, image_url, title, author, descriptions, category)
+    VALUES ($1, $2, $3, $4, $5, $6);
+  `;
+  const values = [ibsn, image_url, title, author, descriptions, category];
+  clientInformation.query(SQL, values)
+  .then(result => {
+    response.redirect('/')
+  })
+  .catch(error => errorHandler(error, response));
 }
 
 function errorHandler(error, request, response, next) {
