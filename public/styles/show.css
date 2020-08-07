@@ -1,6 +1,7 @@
 header {
     background-color:  #201b19;
-    color:  #F0F7F4 !important;
+    color:  #F0F7F4;
+    font-size: xx-large;
 }
 
 body {
@@ -21,14 +22,56 @@ h2 {
 }
 
 .book-card {
-    background-color: #705d564b;
-    margin-top: 10px;
+    background-color: #705d5686;
+    margin: 20px;
+    border-radius: 5px;
+    
 }
 
 i {
     float: right;
+    padding: 10px;
 }
+
+.clearfix {
+    overflow: auto;
+  }
 
 div {
     color: #32292F;
+}
+
+h1 {
+    max-width: 90%;
+    display: inline-block;
+    padding: 10px;
+}
+
+h2 {
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+span {
+    font-size: 20px;
+    font-weight: 450;
+    text-align: center;
+    display: block;
+}
+
+p {
+    margin: 10px;
+    font-size: 20px;
+}
+
+img {
+    height: 230px;
+    display: block;
+    margin: 10px auto 10px auto;
 }
