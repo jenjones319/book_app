@@ -5,6 +5,14 @@
         <h3><%= book.title %></h3>
         <span><%= book.authors %></span>
         <p><%= book.description %></p>
+        <form action="/savebook" method="POST">
+            <input type="hidden" name="image_url" id="<%=book.image_url%>">
+            <input type="hidden" name="title" id="<%=book.title%>">
+            <input type="hidden" name="authors" id="<%=book.authors%>">
+            <input type="hidden" name="description" id="<%=book.description%>">
+            <button type="submit">Save Book</button>
+            <!-- <a href="books/<%=book.id%>">Details</a> -->
+        </form>
     </div>
         <% }) %>
 </div>
