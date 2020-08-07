@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./styles/new.css">
+    <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/show.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Book Collection</title>
   </head>
   <body>
@@ -10,7 +12,7 @@
     </header>
     <main>
       <section id="search-container">
-      <div id="content1"><h4>Search by Title or Author</h4></div>
+      <div class="search"><h4>Search by Title or Author</h4>
       <form action="/searches" method="post">
         <input type="text" name="search" placeholder="Enter a title or author" required>
         <fieldset>
@@ -27,6 +29,7 @@
         </fieldset>
         <button type="submit">Search the Google Books API</button>
       </form>
+      </div>
       </section>
     </main>
   </body>
