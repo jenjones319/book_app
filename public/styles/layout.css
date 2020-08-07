@@ -1,4 +1,9 @@
 
+  header{
+  max-width: 480px;
+  margin: 0 auto;
+  display: block;
+
   #search-container {
     max-width: 600px;
     margin: 0 auto;

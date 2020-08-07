@@ -1,69 +1,77 @@
-main {
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  #search-container {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-  }
-   
-  @media (min-width: 960px) {
-    #search-container {
-      max-width: 1200px;
-    }
-  }
-  
-  @media (min-width: 800px) {
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    header, footer {
-      background-color: lightgrey;
-    }
-    
-    .content1 {
-      background-color: #705D56;
-      grid-column: 1;
-      grid-row: 2;
-    }
-    
-    .content2 {
-      background-color: #705D56;
-      grid-column: 1;
-      grid-row: 3;
-    }
-    
-    .content3 {
-      background-color: #705D56;
-      grid-column: 1;
-      grid-row: 4;
-    }
-    
-    .content4 {
-      background-color: #705d56;
-      grid-column: 1;
-      grid-row: 5;
-    }
-    
-    
-
-* {
-    color: #32292F;
+header {
+  background-color:  #201b19;
+  color:  #F0F7F4;
+  font-size: xx-large;
 }
 
-body{
-    background-color: #F0F7F4;
+body {
+  background-color: #F0F7F4;
 }
 
 h2 {
-    background-color: #70ABAF;
-    font-size: 32px;
-    color:  #F0F7F4;
-    text-align: center;
+  background-color: #473c37;
+  font-size: 32px;
+  color:  #F0F7F4;
+  text-align: center;
 
+}
+
+#search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  background-color: #705d5686;
+  margin: 20px;
+  border-radius: 5px;
+  
+}
+
+i {
+  float: right;
+  padding: 10px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+div {
+  color: #32292F;
+}
+
+h1 {
+  max-width: 90%;
+  display: inline-block;
+  padding: 10px;
+}
+
+h2 {
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+  font-weight: 450;
+  text-align: center;
+  display: block;
+}
+
+p {
+  margin: 10px;
+  font-size: 20px;
+}
+
+img {
+  height: 230px;
+  display: block;
+  margin: 10px auto 10px auto;
 }

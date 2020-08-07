@@ -99,6 +99,10 @@ function createSearch(request, response) {
   if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/show', { searchResults: results }));
+    .then(apiResponse => apiResponse.body.items.map(viewDetails => new View(viewDetails.volumeInfo)))
+    .then(results => response.render('pages/show', { viewDetails: results }))
+    .catch(err => {
+      errorHandler(err, response)
+    });
 }
+
