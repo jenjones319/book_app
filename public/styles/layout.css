@@ -3,6 +3,11 @@ main {
     margin: 0 auto;
     color: #32292F;
   }
+
+header{
+  max-width: 480px;
+  margin: 0 auto;
+}
   #search-container {
     max-width: 600px;
     margin: 0 auto;
